@@ -1,3 +1,5 @@
+import java.util.IllegalFormatCodePointException;
+
 /**
  * Helper class that affers helper methods related with Strings
  * @author Francisco NOlasco
@@ -72,13 +74,24 @@ public class StringHelper {
         if (!ID.matches("[0-9]{8}[A-Za-z]")){
             return false;
         }
+        char [] letrasID = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
 
-        return ID.matches("");
+        String numeroID=ID.substring(0,8);
+        int numero = Integer.parseInt(numeroID);
+        int resto = numero % 23;
+        String idReal = numeroID + letrasID[resto];
+        if (ID.toUpperCase() == idReal.toUpperCase()){
+            return false;
+        }
+
+        return true;
     }
     public static void main(String[] args) {
        System.out.println(isSafePassword(8,12,"abcdefgha1Á_"));
         System.out.println(isSafePasswordDefault("abcdefgha1Á_"));
         System.out.println(checkPhoneNumber("678988989"));
+        System.out.println(77689287%23);
+        System.out.println(isValideID("77689287W"));
     }
 
 }
