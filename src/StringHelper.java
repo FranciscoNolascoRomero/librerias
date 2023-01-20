@@ -70,8 +70,9 @@ public class StringHelper {
 
         return number.matches("[679][0-9]{8}");
     }
+    //falta la documentacion
     public static boolean isValideID(String ID) {
-        if (!ID.matches("[0-9]{8}[A-Za-z]")){
+        if (!ID.toLowerCase().matches("[0-9]{8}[a-z]")){
             return false;
         }
         char [] letrasID = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
@@ -86,12 +87,12 @@ public class StringHelper {
 
         return true;
     }
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
        System.out.println(isSafePassword(8,12,"abcdefgha1Á_"));
         System.out.println(isSafePasswordDefault("abcdefgha1Á_"));
         System.out.println(checkPhoneNumber("678988989"));
         System.out.println(77689287%23);
         System.out.println(isValideID("77689287W"));
-    }
+    }*/
 
 }
