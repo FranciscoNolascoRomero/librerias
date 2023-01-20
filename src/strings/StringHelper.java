@@ -81,7 +81,7 @@ public class StringHelper {
         int numero = Integer.parseInt(numeroID);
         int resto = numero % 23;
         String idReal = numeroID + letrasID[resto];
-        if (ID.toUpperCase() == idReal.toUpperCase()){
+        if (ID.toUpperCase().equals(idReal.toUpperCase())){
             return false;
         }
 
@@ -96,3 +96,4 @@ public class StringHelper {
     }*/
 
 }
+
