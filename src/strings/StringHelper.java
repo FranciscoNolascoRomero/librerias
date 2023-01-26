@@ -1,3 +1,5 @@
+package strings;
+
 import java.util.IllegalFormatCodePointException;
 import java.util.Random;
 /**
@@ -92,26 +94,27 @@ public class StringHelper {
             return null;
         final String  FUENTE_CARACTERES =
                 "abcdefghijklmnñopqrstuvwxyzABCDEFEGHIJKLMNÑOPQRSTUVWXYZ¿?()=@.:,;!¡&{}012456789";
-        StringBuilder stringBuilder = new StringBuilder();
+
         Random random = new Random();
-       // do {
+        StringBuilder stringBuilder;
+        do {
+            stringBuilder = new StringBuilder();
             for (int i = 0; i < length; i++) {
                 int posicion = random.nextInt(FUENTE_CARACTERES.length());
                 char caracter = FUENTE_CARACTERES.charAt(posicion);
                 stringBuilder.append(caracter);
             }
-        //}while (!(isSafePassword(4,4,stringBuilder.toString())));
+        }while (!(isSafePassword(length,length,stringBuilder.toString())));
 
         return stringBuilder.toString();
     }
 //    public static void main(String[] args) {
-//      /* System.out.println(isSafePassword(8,12,"abcdefgha1Á_"));
-//        System.out.println(isSafePasswordDefault("abcdefgha1Á_"));
-//        System.out.println(checkPhoneNumber("678988989"));
-//        System.out.println(77689287%23);
-//        System.out.println(isValideID("77689287W"));*/
+////      System.out.println(isSafePassword(8,12,"abcdefgha1Á_"));
+////        System.out.println(isSafePasswordDefault("abcdefgha1Á_"));
+////        System.out.println(checkPhoneNumber("678988989"));
+////        System.out.println(77689287%23);
+////        System.out.println(isValideID("77689287W"));
 //        System.out.println(createSafePassword(4));
 //    }
-
 }
 
